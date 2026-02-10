@@ -4,6 +4,7 @@ import bmwHero from "@/assets/bmw-hero.jpg";
 import foundersImg from "@/assets/founders.jpg";
 import communityImg from "@/assets/community.jpg";
 import foxLeadsLogo from "@/assets/foxleads-logo.png";
+import smaLogo from "@/assets/sma-logo.png";
 import ParticipateModal from "@/components/corrida/ParticipateModal";
 import FAQSection from "@/components/corrida/FAQSection";
 import Footer from "@/components/corrida/Footer";
@@ -133,7 +134,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
             {[
               { name: "FOX LEADS", logo: foxLeadsLogo },
-              { name: "COMUNIDADE S.M.A", logo: null },
+              { name: "COMUNIDADE S.M.A", logo: smaLogo },
               { name: "MENTORIA DIAMOND", logo: null },
               { name: "CONSULTORIA STRATIFY", logo: null },
             ].map((prod) => (
