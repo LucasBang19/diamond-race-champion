@@ -163,6 +163,10 @@ const translations: Record<string, Record<Lang, string>> = {
   "modal.specialist": { pt: "Falar com um Especialista", es: "Hablar con un Especialista" },
   "modal.success.title": { pt: "Inscrição realizada!", es: "¡Inscripción realizada!" },
   "modal.success.msg": { pt: "Verifique seu e-mail para receber todas as informações da Corrida Diamond.", es: "Revisa tu e-mail para recibir toda la información de la Carrera Diamond." },
+  "modal.found.msg1": { pt: "encontramos seu cadastro no", es: "encontramos tu registro en" },
+  "modal.found.msg2": { pt: "através do Email", es: "a través del Email" },
+  "modal.notfound.title": { pt: "Cadastro não encontrado", es: "Registro no encontrado" },
+  "modal.notfound.msg": { pt: "Não encontramos seu e-mail em nossa base. Entre em contato com o suporte para verificar sua inscrição.", es: "No encontramos tu e-mail en nuestra base. Contacta al soporte para verificar tu inscripción." },
 
   // Footer
   "footer.sub": { pt: "Um desafio do Ecossistema Diamond Global", es: "Un desafío del Ecosistema Diamond Global" },

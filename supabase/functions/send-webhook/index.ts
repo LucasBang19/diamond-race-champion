@@ -24,7 +24,15 @@ serve(async (req) => {
     const data = await res.text();
     console.log("Webhook response:", res.status, data);
 
-    return new Response(JSON.stringify({ success: true }), {
+    // Parse the webhook response and return it to the client
+    let parsedData;
+    try {
+      parsedData = JSON.parse(data);
+    } catch {
+      parsedData = null;
+    }
+
+    return new Response(JSON.stringify({ success: true, result: parsedData }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
