@@ -17,11 +17,19 @@ interface ParticipateModalProps {
   onClose: () => void;
 }
 
+interface FoundData {
+  nome: string;
+  produto: string;
+  email: string;
+}
+
 const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
   const [email, setEmail] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [foundData, setFoundData] = useState<FoundData | null>(null);
+  const [notFound, setNotFound] = useState(false);
   const { t } = useLanguage();
 
   if (!open) return null;
@@ -31,13 +39,28 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
     if (!email || !selectedProduct) return;
 
     setLoading(true);
+    setFoundData(null);
+    setNotFound(false);
     try {
-      const { error } = await supabase.functions.invoke("send-webhook", {
+      const { data, error } = await supabase.functions.invoke("send-webhook", {
         body: { email: email.trim(), product: selectedProduct },
       });
-      if (error) console.error("Webhook error:", error);
+      if (error) {
+        console.error("Webhook error:", error);
+        setNotFound(true);
+      } else if (data?.result && Array.isArray(data.result) && data.result.length > 0) {
+        const entry = data.result[0];
+        setFoundData({
+          nome: entry["Nome"] || entry["nome"] || "",
+          produto: entry["Nome do Produto"] || entry["produto"] || "",
+          email: entry["Email"] || entry["email"] || "",
+        });
+      } else {
+        setNotFound(true);
+      }
     } catch (err) {
       console.error("Webhook error:", err);
+      setNotFound(true);
     } finally {
       setSubmitted(true);
       setLoading(false);
@@ -48,7 +71,7 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "hsla(0,0%,0%,0.7)" }}>
       <div className="relative w-full max-w-lg rounded-sm bg-background p-8 shadow-2xl animate-fade-up">
         <button
-          onClick={() => { onClose(); setSubmitted(false); setEmail(""); setSelectedProduct(""); }}
+          onClick={() => { onClose(); setSubmitted(false); setEmail(""); setSelectedProduct(""); setFoundData(null); setNotFound(false); }}
           className="absolute right-4 top-4 text-muted-foreground hover:text-foreground transition-colors"
         >
           <X size={24} />
@@ -56,11 +79,30 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
 
         {submitted ? (
           <div className="text-center py-8">
-            <div className="text-5xl mb-4">🏆</div>
-            <h3 className="font-heading text-2xl font-bold mb-2">{t("modal.success.title")}</h3>
-            <p className="text-muted-foreground">
-              {t("modal.success.msg")}
-            </p>
+            {foundData ? (
+              <>
+                <div className="text-5xl mb-4">🏆</div>
+                <h3 className="font-heading text-2xl font-bold mb-2">{t("modal.success.title")}</h3>
+                <p className="text-foreground text-lg">
+                  <span className="font-bold">{foundData.nome}</span>, {t("modal.found.msg1")} <span className="font-bold">{foundData.produto}</span> {t("modal.found.msg2")} <span className="font-bold">{foundData.email}</span>
+                </p>
+                <p className="text-muted-foreground mt-4 text-sm">
+                  {t("modal.success.msg")}
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="text-5xl mb-4">😕</div>
+                <h3 className="font-heading text-2xl font-bold mb-2">{t("modal.notfound.title")}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {t("modal.notfound.msg")}
+                </p>
+                <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full text-sm">
+                  <MessageCircle size={16} />
+                  {t("modal.support")}
+                </a>
+              </>
+            )}
           </div>
         ) : (
           <>
