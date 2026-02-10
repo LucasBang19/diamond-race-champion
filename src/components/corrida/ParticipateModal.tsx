@@ -20,14 +20,28 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
   const [email, setEmail] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { t } = useLanguage();
 
   if (!open) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && selectedProduct) {
+    if (!email || !selectedProduct) return;
+
+    setLoading(true);
+    try {
+      await fetch("https://webhook.dev.stratifyacceleration.com/webhook/corridabmw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), product: selectedProduct }),
+      });
       setSubmitted(true);
+    } catch (err) {
+      console.error("Webhook error:", err);
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -91,8 +105,8 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
                 />
               </div>
 
-              <button type="submit" className="btn-gold w-full">
-                {t("modal.submit")}
+              <button type="submit" disabled={loading} className="btn-gold w-full disabled:opacity-50">
+                {loading ? "Enviando..." : t("modal.submit")}
               </button>
             </form>
 
