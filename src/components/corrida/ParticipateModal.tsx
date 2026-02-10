@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
 
 const PRODUCTS = [
   "Fox Leads",
@@ -31,13 +32,10 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
 
     setLoading(true);
     try {
-      const form = new FormData();
-      form.append("email", email.trim());
-      form.append("product", selectedProduct);
-      navigator.sendBeacon(
-        "https://webhook.dev.stratifyacceleration.com/webhook/corridabmw",
-        form
-      );
+      const { error } = await supabase.functions.invoke("send-webhook", {
+        body: { email: email.trim(), product: selectedProduct },
+      });
+      if (error) console.error("Webhook error:", error);
     } catch (err) {
       console.error("Webhook error:", err);
     } finally {
