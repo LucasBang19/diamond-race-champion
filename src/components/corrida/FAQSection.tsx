@@ -19,9 +19,9 @@ const FAQSection = ({ onParticipate }: FAQSectionProps) => {
   }));
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-12 sm:py-20 px-3 sm:px-4 bg-background">
       <div className="max-w-3xl mx-auto">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-2">
+        <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2">
           {t("faq.title")}
         </h2>
         <div className="gold-divider mx-auto mb-12" />
