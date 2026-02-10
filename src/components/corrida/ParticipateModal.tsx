@@ -33,7 +33,8 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
     try {
       await fetch("https://webhook.dev.stratifyacceleration.com/webhook/corridabmw", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({ email: email.trim(), product: selectedProduct }),
       });
       setSubmitted(true);
