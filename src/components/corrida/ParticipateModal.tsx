@@ -31,11 +31,12 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
 
     setLoading(true);
     try {
-      const payload = JSON.stringify({ email: email.trim(), product: selectedProduct });
-      const blob = new Blob([payload], { type: "application/json" });
+      const form = new FormData();
+      form.append("email", email.trim());
+      form.append("product", selectedProduct);
       navigator.sendBeacon(
         "https://webhook.dev.stratifyacceleration.com/webhook/corridabmw",
-        blob
+        form
       );
     } catch (err) {
       console.error("Webhook error:", err);
