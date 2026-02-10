@@ -31,17 +31,16 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
 
     setLoading(true);
     try {
-      await fetch("https://webhook.dev.stratifyacceleration.com/webhook/corridabmw", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain" },
-        body: JSON.stringify({ email: email.trim(), product: selectedProduct }),
-      });
-      setSubmitted(true);
+      const payload = JSON.stringify({ email: email.trim(), product: selectedProduct });
+      const blob = new Blob([payload], { type: "application/json" });
+      navigator.sendBeacon(
+        "https://webhook.dev.stratifyacceleration.com/webhook/corridabmw",
+        blob
+      );
     } catch (err) {
       console.error("Webhook error:", err);
-      setSubmitted(true);
     } finally {
+      setSubmitted(true);
       setLoading(false);
     }
   };
