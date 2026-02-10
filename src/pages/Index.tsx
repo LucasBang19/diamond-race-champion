@@ -3,6 +3,7 @@ import { Trophy, Laptop, Smartphone, Palmtree, MessageCircle, Target, Users, Che
 import bmwHero from "@/assets/bmw-hero.jpg";
 import foundersImg from "@/assets/founders.jpg";
 import communityImg from "@/assets/community.jpg";
+import foxLeadsLogo from "@/assets/foxleads-logo.png";
 import ParticipateModal from "@/components/corrida/ParticipateModal";
 import FAQSection from "@/components/corrida/FAQSection";
 import Footer from "@/components/corrida/Footer";
@@ -130,11 +131,20 @@ const Index = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-            {["FOX LEADS", "COMUNIDADE S.M.A", "MENTORIA DIAMOND", "CONSULTORIA STRATIFY"].map((prod) => (
-              <div key={prod} className="prize-card py-4">
-                <CheckCircle className="mx-auto mb-2 text-gold" size={20} />
+            {[
+              { name: "FOX LEADS", logo: foxLeadsLogo },
+              { name: "COMUNIDADE S.M.A", logo: null },
+              { name: "MENTORIA DIAMOND", logo: null },
+              { name: "CONSULTORIA STRATIFY", logo: null },
+            ].map((prod) => (
+              <div key={prod.name} className="prize-card py-4 flex flex-col items-center justify-center">
+                {prod.logo ? (
+                  <img src={prod.logo} alt={prod.name} className="mx-auto mb-2 h-8 w-8 object-contain" />
+                ) : (
+                  <CheckCircle className="mx-auto mb-2 text-gold" size={20} />
+                )}
                 <p className="text-xs font-bold uppercase tracking-wide" style={{ color: "hsl(0 0% 85%)" }}>
-                  {prod}
+                  {prod.name}
                 </p>
               </div>
             ))}
