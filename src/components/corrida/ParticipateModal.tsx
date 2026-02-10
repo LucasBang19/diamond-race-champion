@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, MessageCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const PRODUCTS = [
   "Fox Leads",
@@ -19,6 +20,7 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
   const [email, setEmail] = useState("");
   const [selectedProduct, setSelectedProduct] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   if (!open) return null;
 
@@ -42,20 +44,20 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
         {submitted ? (
           <div className="text-center py-8">
             <div className="text-5xl mb-4">🏆</div>
-            <h3 className="font-heading text-2xl font-bold mb-2">Inscrição realizada!</h3>
+            <h3 className="font-heading text-2xl font-bold mb-2">{t("modal.success.title")}</h3>
             <p className="text-muted-foreground">
-              Verifique seu e-mail para receber todas as informações da Corrida Diamond.
+              {t("modal.success.msg")}
             </p>
           </div>
         ) : (
           <>
             <h3 className="font-heading text-2xl font-bold text-center mb-2">
-              Quero Participar
+              {t("modal.title")}
             </h3>
             <div className="gold-divider mx-auto mb-6" />
 
             <p className="text-sm text-muted-foreground text-center mb-4">
-              É membro de algum dos nossos produtos?
+              {t("modal.member.q")}
             </p>
 
             <div className="grid grid-cols-2 gap-2 mb-6">
@@ -77,38 +79,38 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-1 block">
-                  Seu e-mail
+                  {t("modal.email.label")}
                 </label>
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Preencha com o mesmo email cadastrado na compra"
+                  placeholder={t("modal.email.placeholder")}
                   className="w-full rounded-sm border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                 />
               </div>
 
               <button type="submit" className="btn-gold w-full">
-                Confirmar Inscrição
+                {t("modal.submit")}
               </button>
             </form>
 
             <div className="mt-6 space-y-3 border-t border-border pt-6">
               <p className="text-xs text-muted-foreground text-center">
-                Se não lembra seu email ou não foi encontrado o seu cadastro mesmo sendo membro de algum produto:
+                {t("modal.forgot")}
               </p>
               <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full text-xs">
                 <MessageCircle size={16} />
-                Falar com o Suporte
+                {t("modal.support")}
               </a>
 
               <p className="text-xs text-muted-foreground text-center">
-                Não é membro e quer participar?
+                {t("modal.notmember")}
               </p>
               <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-dark w-full text-xs">
                 <MessageCircle size={16} className="mr-2" />
-                Falar com um Especialista
+                {t("modal.specialist")}
               </a>
             </div>
           </>
