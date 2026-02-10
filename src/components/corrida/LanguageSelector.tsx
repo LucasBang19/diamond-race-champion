@@ -9,7 +9,7 @@ const LanguageSelector = () => {
   const { lang, setLang } = useLanguage();
 
   return (
-    <div className="fixed top-4 right-4 z-50 flex gap-1 bg-background/90 backdrop-blur-sm border border-border rounded-full p-1 shadow-lg">
+    <div className="fixed top-3 right-3 sm:top-4 sm:right-4 z-50 flex gap-1 bg-background/90 backdrop-blur-sm border border-border rounded-full p-1 shadow-lg">
       {(Object.keys(flags) as Lang[]).map((l) => (
         <button
           key={l}

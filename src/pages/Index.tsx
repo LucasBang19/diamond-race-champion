@@ -26,20 +26,20 @@ const Index = () => {
         <div className="absolute inset-0 opacity-20" style={{
           background: "radial-gradient(ellipse at 50% 0%, hsl(43 75% 49% / 0.3), transparent 70%)"
         }} />
-        <div className="relative max-w-6xl mx-auto px-4 pt-16 pb-8 text-center">
-          <p className="text-gold font-body text-sm font-bold uppercase tracking-[0.3em] mb-6 animate-fade-up">
+        <div className="relative max-w-6xl mx-auto px-3 sm:px-4 pt-10 sm:pt-16 pb-6 sm:pb-8 text-center">
+          <p className="text-gold font-body text-xs sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 animate-fade-up">
             {t("hero.badge")}
           </p>
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black mb-6 animate-fade-up" style={{ color: "hsl(0 0% 95%)" }}>
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 animate-fade-up" style={{ color: "hsl(0 0% 95%)" }}>
             {t("hero.title")} <span className="text-gold">DIAMOND</span>
           </h1>
-          <p className="font-body text-base md:text-lg max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
+          <p className="font-body text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
             {t("hero.sub1")}
           </p>
-          <p className="font-body text-base md:text-lg max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
+          <p className="font-body text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
             {t("hero.sub2.pre")} <strong className="text-gold">BMW</strong> {t("hero.sub2.post")}
           </p>
-          <p className="font-body text-sm max-w-xl mx-auto mb-8" style={{ color: "hsl(0 0% 50%)" }}>
+          <p className="font-body text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8" style={{ color: "hsl(0 0% 50%)" }}>
             {t("hero.sub3")}<br />
             <strong style={{ color: "hsl(0 0% 80%)" }}>{t("hero.sub3b")}</strong>
           </p>
@@ -51,7 +51,7 @@ const Index = () => {
           />
 
           {/* Prizes */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto mb-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 max-w-3xl mx-auto mb-8 sm:mb-10">
             <div className="prize-card">
               <Trophy className="mx-auto mb-2 text-gold" size={28} />
               <p className="text-xs font-bold uppercase tracking-wide text-gold">{t("hero.1st")}</p>
@@ -81,9 +81,9 @@ const Index = () => {
       </section>
 
       {/* BLOCO 2 - O QUE É */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 bg-background">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             {t("b2.title.pre")} <span className="text-gold">{t("b2.title.post")}</span>{t("b2.title.suffix")}
           </h2>
           <div className="gold-divider mx-auto mb-8" />
@@ -118,9 +118,9 @@ const Index = () => {
       </section>
 
       {/* BLOCO 3 - COMO PARTICIPAR */}
-      <section className="section-dark py-20 px-4">
+      <section className="section-dark py-12 sm:py-20 px-3 sm:px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2" style={{ color: "hsl(0 0% 95%)" }}>
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2" style={{ color: "hsl(0 0% 95%)" }}>
             {t("b3.title.pre")} <span className="text-gold">{t("b3.title.post")}</span>?
           </h2>
           <div className="gold-divider mx-auto mb-8" />
@@ -162,11 +162,11 @@ const Index = () => {
       </section>
 
       {/* BLOCO 3B - NÃO SOU MEMBRO */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 bg-background">
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-2">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold mb-2">
                 {t("b3b.title.pre")} <span className="text-gold">{t("b3b.title.post")}</span>.
               </h2>
               <div className="gold-divider mb-6" />
@@ -193,9 +193,9 @@ const Index = () => {
       </section>
 
       {/* BLOCO 4 - FUNDADORES */}
-      <section className="section-dark py-20 px-4">
+      <section className="section-dark py-12 sm:py-20 px-3 sm:px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div className="order-2 md:order-1">
               <img
                 src={foundersImg}
@@ -204,7 +204,7 @@ const Index = () => {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2" style={{ color: "hsl(0 0% 95%)" }}>
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2" style={{ color: "hsl(0 0% 95%)" }}>
                 {t("b4.title.pre")} <span className="text-gold">{t("b4.title.post")}</span>
               </h2>
               <div className="gold-divider mb-6" />
@@ -226,9 +226,9 @@ const Index = () => {
       </section>
 
       {/* BLOCO 5 - INFORMAÇÕES OFICIAIS */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-12 sm:py-20 px-3 sm:px-4 bg-background">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-2">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             {t("b5.title.pre")} <span className="text-gold">{t("b5.title.post")}</span> {t("b5.title.end")}
           </h2>
           <div className="gold-divider mx-auto mb-8" />
