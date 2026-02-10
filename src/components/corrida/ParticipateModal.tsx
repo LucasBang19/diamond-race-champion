@@ -1,0 +1,121 @@
+import { useState } from "react";
+import { X, MessageCircle } from "lucide-react";
+
+const PRODUCTS = [
+  "Fox Leads",
+  "Comunidade S.M.A",
+  "Mentoria Diamond",
+  "Consultoria Stratify",
+];
+
+const WPP_LINK = "https://wa.me/555197062246";
+
+interface ParticipateModalProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
+  const [email, setEmail] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  if (!open) return null;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email && selectedProduct) {
+      setSubmitted(true);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "hsla(0,0%,0%,0.7)" }}>
+      <div className="relative w-full max-w-lg rounded-sm bg-background p-8 shadow-2xl animate-fade-up">
+        <button
+          onClick={() => { onClose(); setSubmitted(false); setEmail(""); setSelectedProduct(""); }}
+          className="absolute right-4 top-4 text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <X size={24} />
+        </button>
+
+        {submitted ? (
+          <div className="text-center py-8">
+            <div className="text-5xl mb-4">🏆</div>
+            <h3 className="font-heading text-2xl font-bold mb-2">Inscrição realizada!</h3>
+            <p className="text-muted-foreground">
+              Verifique seu e-mail para receber todas as informações da Corrida Diamond.
+            </p>
+          </div>
+        ) : (
+          <>
+            <h3 className="font-heading text-2xl font-bold text-center mb-2">
+              Quero Participar
+            </h3>
+            <div className="gold-divider mx-auto mb-6" />
+
+            <p className="text-sm text-muted-foreground text-center mb-4">
+              É membro de algum dos nossos produtos?
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 mb-6">
+              {PRODUCTS.map((p) => (
+                <button
+                  key={p}
+                  onClick={() => setSelectedProduct(p)}
+                  className={`px-3 py-3 rounded-sm text-xs font-bold uppercase tracking-wide transition-all duration-200 border ${
+                    selectedProduct === p
+                      ? "border-gold bg-gold/10 text-foreground"
+                      : "border-border text-muted-foreground hover:border-gold/50"
+                  }`}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label className="text-xs font-bold uppercase tracking-wide text-muted-foreground mb-1 block">
+                  Seu e-mail
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Preencha com o mesmo email cadastrado na compra"
+                  className="w-full rounded-sm border border-border bg-muted px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                />
+              </div>
+
+              <button type="submit" className="btn-gold w-full">
+                Confirmar Inscrição
+              </button>
+            </form>
+
+            <div className="mt-6 space-y-3 border-t border-border pt-6">
+              <p className="text-xs text-muted-foreground text-center">
+                Se não lembra seu email ou não foi encontrado o seu cadastro mesmo sendo membro de algum produto:
+              </p>
+              <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-whatsapp w-full text-xs">
+                <MessageCircle size={16} />
+                Falar com o Suporte
+              </a>
+
+              <p className="text-xs text-muted-foreground text-center">
+                Não é membro e quer participar?
+              </p>
+              <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-dark w-full text-xs">
+                <MessageCircle size={16} className="mr-2" />
+                Falar com um Especialista
+              </a>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default ParticipateModal;
