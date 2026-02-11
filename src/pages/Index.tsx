@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Trophy, Laptop, Smartphone, Palmtree, MessageCircle, Target, Users, CheckCircle } from "lucide-react";
-import bmwHero from "@/assets/bmw-hero.jpg";
-import foundersImg from "@/assets/founders.jpg";
+import bmwHero from "@/assets/bmw-hero.png";
+import foundersImg from "@/assets/founders.jpeg";
 import communityImg from "@/assets/community.jpg";
 import foxLeadsLogo from "@/assets/foxleads-logo.png";
 import smaLogo from "@/assets/sma-logo.png";
