@@ -54,19 +54,19 @@ const Index = () => {
           background: "radial-gradient(ellipse at 50% 0%, hsl(43 75% 49% / 0.3), transparent 70%)"
         }} />
         <div className="relative max-w-6xl mx-auto px-3 sm:px-4 pt-10 sm:pt-16 pb-6 sm:pb-8 text-center">
-          <p className="text-gold font-body text-xs sm:text-sm font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 animate-fade-up">
+          <p className="text-gold font-body text-sm sm:text-base font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 animate-fade-up">
             {t("hero.badge")}
           </p>
           <h1 className="font-heading text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 animate-fade-up" style={{ color: "hsl(0 0% 95%)" }}>
             {t("hero.title")} <span className="text-gold">DIAMOND</span>
           </h1>
-          <p className="font-body text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
+          <p className="font-body text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
             {t("hero.sub1")}
           </p>
-          <p className="font-body text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
+          <p className="font-body text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-2 leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
             {t("hero.sub2.pre")} <strong className="text-gold">BMW</strong> {t("hero.sub2.post")}
           </p>
-          <p className="font-body text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8" style={{ color: "hsl(0 0% 50%)" }}>
+          <p className="font-body text-sm sm:text-base max-w-xl mx-auto mb-6 sm:mb-8" style={{ color: "hsl(0 0% 50%)" }}>
             {t("hero.sub3")}<br />
             <strong style={{ color: "hsl(0 0% 80%)" }}>{t("hero.sub3b")}</strong>
           </p>
@@ -90,12 +90,12 @@ const Index = () => {
             {t("b2.title.pre")} <span className="text-gold">{t("b2.title.post")}</span>{t("b2.title.suffix")}
           </h2>
           <div className="gold-divider mx-auto mb-8" />
-          <p className="font-body text-muted-foreground leading-relaxed mb-6">
+          <p className="font-body text-base text-muted-foreground leading-relaxed mb-6">
             {t("b2.p1")}{" "}
             <strong className="text-foreground">Jéssica Couto</strong> e{" "}
             <strong className="text-foreground">Francisco Galarreta</strong>, {t("b2.p1b")}
           </p>
-          <p className="font-body text-muted-foreground leading-relaxed mb-8">
+          <p className="font-body text-base text-muted-foreground leading-relaxed mb-8">
             {t("b2.p2")}{" "}
             <strong className="text-foreground">{t("b2.p2b")}</strong>
           </p>
@@ -109,7 +109,7 @@ const Index = () => {
             ].map((p) => (
               <div key={p.place} className="border border-border rounded-sm p-4 hover:border-gold/40 transition-colors">
                 <p className="text-gold font-bold text-lg">{p.place}</p>
-                <p className="text-sm font-semibold mt-1">{p.prize}</p>
+                <p className="text-base font-semibold mt-1">{p.prize}</p>
               </div>
             ))}
           </div>
@@ -128,7 +128,7 @@ const Index = () => {
           </h2>
           <div className="gold-divider mx-auto mb-8" />
 
-          <p className="font-body text-sm leading-relaxed mb-6" style={{ color: "hsl(0 0% 70%)" }}>
+          <p className="font-body text-base leading-relaxed mb-6" style={{ color: "hsl(0 0% 70%)" }}>
             {t("b3.p1")}
           </p>
 
@@ -141,14 +141,14 @@ const Index = () => {
             ].map((prod) => (
               <div key={prod.name} className="prize-card py-4 flex flex-col items-center justify-center">
                 <img src={prod.logo} alt={prod.name} className={`mx-auto mb-2 object-contain rounded-sm ${prod.name === "MENTORIA DIAMOND" ? "h-14 w-14" : "h-10 w-10"}`} />
-                <p className="text-xs font-bold uppercase tracking-wide" style={{ color: "hsl(0 0% 85%)" }}>
+                <p className="text-sm font-bold uppercase tracking-wide" style={{ color: "hsl(0 0% 85%)" }}>
                   {prod.name}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="font-body text-sm leading-relaxed mb-4" style={{ color: "hsl(0 0% 70%)" }}>
+          <p className="font-body text-base leading-relaxed mb-4" style={{ color: "hsl(0 0% 70%)" }}>
             {t("b3.p2")}
           </p>
 
@@ -156,13 +156,13 @@ const Index = () => {
             {t("cta.member")}
           </button>
 
-          <p className="font-body text-xs mb-4" style={{ color: "hsl(0 0% 50%)" }}>
+          <p className="font-body text-sm mb-4" style={{ color: "hsl(0 0% 50%)" }}>
             {t("b3.email.info")}
           </p>
-          <p className="font-body text-xs mb-4" style={{ color: "hsl(0 0% 50%)" }}>
+          <p className="font-body text-sm mb-4" style={{ color: "hsl(0 0% 50%)" }}>
             {t("b3.support.info")}
           </p>
-          <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-xs">
+          <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-sm">
             <MessageCircle size={16} />
             {t("b3.support.btn")}
           </a>
@@ -178,10 +178,10 @@ const Index = () => {
                 {t("b3b.title.pre")} <span className="text-gold">{t("b3b.title.post")}</span>.
               </h2>
               <div className="gold-divider mb-6" />
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-4">
+              <p className="font-body text-base text-muted-foreground leading-relaxed mb-4">
                 {t("b3b.p1")}
               </p>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">
+              <p className="font-body text-base text-muted-foreground leading-relaxed mb-6">
                 <strong className="text-foreground">{t("b3b.p2.pre")}</strong>{" "}
                 {t("b3b.p2.post")}
               </p>
@@ -239,14 +239,14 @@ const Index = () => {
                 {t("b4.title.pre")} <span className="text-gold">{t("b4.title.post")}</span>
               </h2>
               <div className="gold-divider mb-6" />
-              <p className="font-body text-sm leading-relaxed mb-4" style={{ color: "hsl(0 0% 70%)" }}>
+              <p className="font-body text-base leading-relaxed mb-4" style={{ color: "hsl(0 0% 70%)" }}>
                 <strong style={{ color: "hsl(0 0% 90%)" }}>Jéssica Couto</strong>, {t("b4.p1")}{" "}
                 <strong style={{ color: "hsl(0 0% 90%)" }}>Francisco Galarreta</strong>, {t("b4.p1b")}
               </p>
-              <p className="font-body text-sm leading-relaxed mb-4" style={{ color: "hsl(0 0% 70%)" }}>
+              <p className="font-body text-base leading-relaxed mb-4" style={{ color: "hsl(0 0% 70%)" }}>
                 {t("b4.p2")}
               </p>
-              <p className="font-body text-sm leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
+              <p className="font-body text-base leading-relaxed" style={{ color: "hsl(0 0% 70%)" }}>
                 {t("b4.p3.pre")} <strong style={{ color: "hsl(0 0% 90%)" }}>Diamond Global</strong>, {t("b4.p3.mid")}{" "}
                 <strong className="text-gold">R$17 milhões</strong>, {t("b4.p3.post")}{" "}
                 <strong className="text-gold">50 mil alunos</strong> {t("b4.p3.end")}
@@ -268,20 +268,20 @@ const Index = () => {
             <div className="border border-border rounded-sm p-8 hover:border-gold/40 transition-colors">
               <Target className="mx-auto mb-4 text-gold" size={32} />
               <h3 className="font-heading text-lg font-bold mb-2">{t("b5.meta.title")}</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 {t("b5.meta.desc")}
               </p>
             </div>
             <div className="border border-border rounded-sm p-8 hover:border-gold/40 transition-colors">
               <Users className="mx-auto mb-4 text-gold" size={32} />
               <h3 className="font-heading text-lg font-bold mb-2">{t("b5.rule.title")}</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 {t("b5.rule.desc")}
               </p>
             </div>
           </div>
 
-          <p className="text-sm text-muted-foreground">
+          <p className="text-base text-muted-foreground">
             {t("b5.regulation")}
           </p>
         </div>
