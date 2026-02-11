@@ -1,8 +1,15 @@
-import { useState } from "react";
-import { MessageCircle, Target, Users } from "lucide-react";
+import { useState, useCallback } from "react";
+import { MessageCircle, Target, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import bmwHero from "@/assets/bmw-prizes.png";
 import foundersImg from "@/assets/founders.jpeg";
 import communityImg from "@/assets/community.jpg";
+import depoimento1 from "@/assets/depoimento1.jpeg";
+import depoimento2 from "@/assets/depoimento2.jpeg";
+import depoimento3 from "@/assets/depoimento3.jpeg";
+import depoimento4 from "@/assets/depoimento4.jpeg";
+import depoimento5 from "@/assets/depoimento5.jpeg";
+import depoimento6 from "@/assets/depoimento6.jpeg";
+import depoimento7 from "@/assets/depoimento7.jpeg";
 import foxLeadsLogo from "@/assets/foxleads-logo.png";
 import smaLogo from "@/assets/sma-logo.png";
 import diamondLogo from "@/assets/diamond-mentoria-logo.jpg";
@@ -15,11 +22,22 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const WPP_LINK = "https://wa.me/555197062246";
 
+const carouselImages = [depoimento1, depoimento2, depoimento3, depoimento4, depoimento5, depoimento6, depoimento7];
+
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const { t } = useLanguage();
 
   const openModal = () => setModalOpen(true);
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  }, []);
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -166,12 +184,35 @@ const Index = () => {
                 {t("b3b.cta")}
               </a>
             </div>
-            <div>
-              <img
-                src={communityImg}
-                alt="Comunidade Diamond celebrando conquistas"
-                className="rounded-sm w-full shadow-xl"
-              />
+            <div className="relative">
+              <div className="overflow-hidden rounded-sm shadow-xl">
+                <img
+                  src={carouselImages[currentSlide]}
+                  alt={`Depoimento ${currentSlide + 1}`}
+                  className="w-full h-auto object-cover aspect-[3/4] max-h-[500px]"
+                />
+              </div>
+              <button
+                onClick={prevSlide}
+                className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-colors"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 transition-colors"
+              >
+                <ChevronRight size={20} />
+              </button>
+              <div className="flex justify-center gap-1.5 mt-3">
+                {carouselImages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentSlide(i)}
+                    className={`w-2 h-2 rounded-full transition-colors ${i === currentSlide ? "bg-gold" : "bg-muted-foreground/30"}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
