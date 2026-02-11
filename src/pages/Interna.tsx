@@ -78,7 +78,6 @@ const Interna = () => {
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
             {t("int.b2.title")}:
           </h2>
-          <p className="text-gold font-heading text-2xl sm:text-3xl font-black mb-6">META CLARA: 460 NOVOS ALUNOS NA COMUNIDADE SMA (VIA AFILIAÇÃO)</p>
           <div className="gold-divider mx-auto mb-8" />
 
           {/* Thermometer */}
@@ -100,7 +99,7 @@ const Interna = () => {
           </div>
 
           <p className="font-body text-xl text-muted-foreground leading-relaxed mb-6">
-            {t("int.b2.desc")}
+            Como previsto no regulamento oficial da corrida, o desafio só finaliza e os prêmios são entregues aos membros que mais pontuarem, quando a meta de 100% vindo de indicação e/ou afiliação for alcançada.
           </p>
 
           <a href="#" className="btn-gold text-lg">
