@@ -117,7 +117,7 @@ const translations: Record<string, Record<Lang, string>> = {
   "b5.title.post": { pt: "Oficiais", es: "Oficial" },
   "b5.title.end": { pt: "da Corrida", es: "de la Carrera" },
   "b5.meta.title": { pt: "Meta Clara", es: "Meta Clara" },
-  "b5.meta.desc": { pt: "460 novos alunos na comunidade SMA (via indicação)", es: "460 nuevos alumnos en la comunidad SMA (por referido)" },
+  "b5.meta.desc": { pt: "460 novos alunos na comunidade SMA (via afiliação)", es: "460 nuevos alumnos en la comunidad SMA (por afiliación)" },
   "b5.rule.title": { pt: "Regra Clara", es: "Regla Clara" },
   "b5.rule.desc": { pt: "Com 460 novos membros, quem mais pontua, ganha o desafio", es: "Con 460 nuevos miembros, quien más puntúa, gana el desafío" },
   "b5.regulation": { pt: "A corrida tem um regulamento oficial que pode ser acessado após a inscrição.", es: "La carrera tiene un reglamento oficial que se puede acceder después de la inscripción." },
