@@ -117,7 +117,7 @@ const Index = () => {
               { name: "CONSULTORIA STRATIFY", logo: stratifyLogo },
             ].map((prod) => (
               <div key={prod.name} className="prize-card py-4 flex flex-col items-center justify-center">
-                <img src={prod.logo} alt={prod.name} className="mx-auto mb-2 h-10 w-10 object-contain rounded-sm" />
+                <img src={prod.logo} alt={prod.name} className={`mx-auto mb-2 object-contain rounded-sm ${prod.name === "MENTORIA DIAMOND" ? "h-14 w-14" : "h-10 w-10"}`} />
                 <p className="text-xs font-bold uppercase tracking-wide" style={{ color: "hsl(0 0% 85%)" }}>
                   {prod.name}
                 </p>
