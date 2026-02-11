@@ -1,5 +1,5 @@
 import { Trophy, Laptop, Smartphone, Palmtree, MessageCircle, ChevronDown, AlertTriangle, Shield, Calendar, Users, Target, Zap, Award } from "lucide-react";
-import bmwHero from "@/assets/bmw-hero.png";
+import bmwHero from "@/assets/bmw-prizes.png";
 import LanguageSelector from "@/components/corrida/LanguageSelector";
 import Footer from "@/components/corrida/Footer";
 import { useLanguage } from "@/contexts/LanguageContext";
