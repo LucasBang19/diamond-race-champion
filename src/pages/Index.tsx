@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Trophy, Laptop, Smartphone, Palmtree, MessageCircle, Target, Users, CheckCircle } from "lucide-react";
+import { MessageCircle, Target, Users, CheckCircle } from "lucide-react";
 import bmwHero from "@/assets/bmw-prizes.png";
 import foundersImg from "@/assets/founders.jpeg";
 import communityImg from "@/assets/community.jpg";
@@ -49,30 +49,6 @@ const Index = () => {
             alt="BMW 320i - Prêmio principal da Corrida Diamond"
             className="w-full max-w-4xl mx-auto rounded-sm mb-8"
           />
-
-          {/* Prizes */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 max-w-3xl mx-auto mb-8 sm:mb-10">
-            <div className="prize-card">
-              <Trophy className="mx-auto mb-2 text-gold" size={28} />
-              <p className="text-xs font-bold uppercase tracking-wide text-gold">{t("hero.1st")}</p>
-              <p className="text-sm font-bold mt-1" style={{ color: "hsl(0 0% 90%)" }}>BMW 320i</p>
-            </div>
-            <div className="prize-card">
-              <Laptop className="mx-auto mb-2 text-gold" size={28} />
-              <p className="text-xs font-bold uppercase tracking-wide text-gold">{t("hero.2nd")}</p>
-              <p className="text-sm font-bold mt-1" style={{ color: "hsl(0 0% 90%)" }}>MacBook Pro</p>
-            </div>
-            <div className="prize-card">
-              <Smartphone className="mx-auto mb-2 text-gold" size={28} />
-              <p className="text-xs font-bold uppercase tracking-wide text-gold">{t("hero.3rd")}</p>
-              <p className="text-sm font-bold mt-1" style={{ color: "hsl(0 0% 90%)" }}>iPhone</p>
-            </div>
-            <div className="prize-card">
-              <Palmtree className="mx-auto mb-2 text-gold" size={28} />
-              <p className="text-xs font-bold uppercase tracking-wide text-gold">{t("hero.45")}</p>
-              <p className="text-sm font-bold mt-1" style={{ color: "hsl(0 0% 90%)" }}>{t("hero.resort")}</p>
-            </div>
-          </div>
 
           <button onClick={openModal} className="btn-gold text-base">
             {t("cta.participate")}
