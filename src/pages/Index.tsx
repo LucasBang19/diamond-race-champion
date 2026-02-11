@@ -10,6 +10,11 @@ import depoimento4 from "@/assets/depoimento4.jpeg";
 import depoimento5 from "@/assets/depoimento5.jpeg";
 import depoimento6 from "@/assets/depoimento6.jpeg";
 import depoimento7 from "@/assets/depoimento7.jpeg";
+import depoimento8 from "@/assets/depoimento8.jpeg";
+import depoimento9 from "@/assets/depoimento9.jpeg";
+import depoimento10 from "@/assets/depoimento10.jpeg";
+import depoimento11 from "@/assets/depoimento11.jpeg";
+import depoimento12 from "@/assets/depoimento12.jpeg";
 import foxLeadsLogo from "@/assets/foxleads-logo.png";
 import smaLogo from "@/assets/sma-logo.png";
 import diamondLogo from "@/assets/diamond-mentoria-logo.jpg";
@@ -22,7 +27,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const WPP_LINK = "https://wa.me/555197062246";
 
-const carouselImages = [depoimento1, depoimento2, depoimento3, depoimento4, depoimento5, depoimento6, depoimento7];
+const carouselImages = [depoimento1, depoimento2, depoimento3, depoimento4, depoimento5, depoimento6, depoimento7, depoimento8, depoimento9, depoimento10, depoimento11, depoimento12];
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
