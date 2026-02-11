@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { MessageCircle, Target, Users, CheckCircle } from "lucide-react";
+import { MessageCircle, Target, Users } from "lucide-react";
 import bmwHero from "@/assets/bmw-prizes.png";
 import foundersImg from "@/assets/founders.jpeg";
 import communityImg from "@/assets/community.jpg";
+import foxLeadsLogo from "@/assets/foxleads-logo.png";
+import smaLogo from "@/assets/sma-logo.png";
+import diamondLogo from "@/assets/diamond-mentoria-logo.jpg";
+import stratifyLogo from "@/assets/stratify-logo.webp";
 import ParticipateModal from "@/components/corrida/ParticipateModal";
 import FAQSection from "@/components/corrida/FAQSection";
 import Footer from "@/components/corrida/Footer";
@@ -106,11 +110,16 @@ const Index = () => {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
-            {["FOX LEADS", "COMUNIDADE S.M.A", "MENTORIA DIAMOND", "CONSULTORIA STRATIFY"].map((name) => (
-              <div key={name} className="prize-card py-4 flex flex-col items-center justify-center">
-                <CheckCircle className="mx-auto mb-2 text-gold" size={20} />
+            {[
+              { name: "FOX LEADS", logo: foxLeadsLogo },
+              { name: "COMUNIDADE S.M.A", logo: smaLogo },
+              { name: "MENTORIA DIAMOND", logo: diamondLogo },
+              { name: "CONSULTORIA STRATIFY", logo: stratifyLogo },
+            ].map((prod) => (
+              <div key={prod.name} className="prize-card py-4 flex flex-col items-center justify-center">
+                <img src={prod.logo} alt={prod.name} className="mx-auto mb-2 h-10 w-10 object-contain rounded-sm" />
                 <p className="text-xs font-bold uppercase tracking-wide" style={{ color: "hsl(0 0% 85%)" }}>
-                  {name}
+                  {prod.name}
                 </p>
               </div>
             ))}
