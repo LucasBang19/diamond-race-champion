@@ -27,7 +27,7 @@ import Footer from "@/components/corrida/Footer";
 import LanguageSelector from "@/components/corrida/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const WPP_LINK = "https://wa.me/555197062246";
+const WPP_LINK = "http://wa.me/553791531087";
 
 const carouselImages = [depoimento13, depoimento14, depoimento1, depoimento2, depoimento3, depoimento4, depoimento5, depoimento6, depoimento7, depoimento8, depoimento9, depoimento10, depoimento11, depoimento12];
 

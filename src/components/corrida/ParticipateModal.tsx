@@ -10,7 +10,7 @@ const PRODUCTS = [
   "Consultoria Stratify",
 ];
 
-const WPP_LINK = "https://wa.me/555197062246";
+const WPP_LINK = "http://wa.me/553791531087";
 
 interface ParticipateModalProps {
   open: boolean;

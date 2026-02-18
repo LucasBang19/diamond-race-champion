@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Progress } from "@/components/ui/progress";
 
-const WPP_LINK = "https://wa.me/555197062246";
+const WPP_LINK = "http://wa.me/553791531087";
 const CURRENT_STUDENTS = 0; // placeholder
 const GOAL = 460;
 
