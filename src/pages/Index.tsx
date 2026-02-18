@@ -28,6 +28,7 @@ import LanguageSelector from "@/components/corrida/LanguageSelector";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const WPP_LINK = "http://wa.me/553791531087";
+const WPP_SPECIALIST = "http://wa.me/555181640888";
 
 const carouselImages = [depoimento13, depoimento14, depoimento1, depoimento2, depoimento3, depoimento4, depoimento5, depoimento6, depoimento7, depoimento8, depoimento9, depoimento10, depoimento11, depoimento12];
 
@@ -187,7 +188,7 @@ const Index = () => {
                 <strong className="text-foreground">{t("b3b.p2.pre")}</strong>{" "}
                 {t("b3b.p2.post")}
               </p>
-              <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-gold">
+              <a href={WPP_SPECIALIST} target="_blank" rel="noopener noreferrer" className="btn-gold">
                 {t("b3b.cta")}
               </a>
             </div>

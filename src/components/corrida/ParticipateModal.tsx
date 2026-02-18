@@ -11,6 +11,7 @@ const PRODUCTS = [
 ];
 
 const WPP_LINK = "http://wa.me/553791531087";
+const WPP_SPECIALIST = "http://wa.me/555181640888";
 
 interface ParticipateModalProps {
   open: boolean;
@@ -163,7 +164,7 @@ const ParticipateModal = ({ open, onClose }: ParticipateModalProps) => {
               <p className="text-xs text-muted-foreground text-center">
                 {t("modal.notmember")}
               </p>
-              <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="btn-dark w-full text-xs">
+              <a href={WPP_SPECIALIST} target="_blank" rel="noopener noreferrer" className="btn-dark w-full text-xs">
                 <MessageCircle size={16} className="mr-2" />
                 {t("modal.specialist")}
               </a>
