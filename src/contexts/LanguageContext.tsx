@@ -185,7 +185,7 @@ const translations: Record<string, Record<Lang, string>> = {
   // Interna - Bloco 2 Termômetro
   "int.b2.title": { pt: "TERMÔMETRO DA META PRINCIPAL", es: "TERMÓMETRO DE LA META PRINCIPAL" },
   "int.b2.goal": { pt: "460 NOVOS ALUNOS", es: "460 NUEVOS ALUMNOS" },
-  "int.b2.desc": { pt: "Como previsto no regulamento oficial da corrida, o desafio só finaliza e os prêmios são entregues aos membros que mais pontuarem, quando a meta de 460 novos alunos vindos de indicação e/ou afiliação for alcançada.", es: "Como previsto en el reglamento oficial de la carrera, el desafío solo finaliza y los premios se entregan a los miembros que más puntúen, cuando la meta de 460 nuevos alumnos por indicación y/o afiliación sea alcanzada." },
+  "int.b2.desc": { pt: "Como previsto no regulamento oficial da corrida, o desafio só finaliza e os prêmios são entregues aos membros que mais pontuarem, quando a meta de 100% vindo de afiliação for alcançada.", es: "Como previsto en el reglamento oficial de la carrera, el desafío solo finaliza y los premios se entregan a los miembros que más puntúen, cuando la meta del 100% por afiliación sea alcanzada." },
   "int.b2.regulation": { pt: "ACESSE O REGULAMENTO OFICIAL CLICANDO AQUI", es: "ACCEDA AL REGLAMENTO OFICIAL HACIENDO CLIC AQUÍ" },
 
   // Interna - Bloco 3 Ranking
