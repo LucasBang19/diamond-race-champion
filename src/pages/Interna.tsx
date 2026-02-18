@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Progress } from "@/components/ui/progress";
 
 const WPP_LINK = "http://wa.me/553791531087";
+const WPP_SPECIALIST = "http://wa.me/555181640888";
 const CURRENT_STUDENTS = 0; // placeholder
 const GOAL = 460;
 
@@ -304,7 +305,7 @@ const Interna = () => {
                   </div>
                   <p className="text-lg text-muted-foreground mb-3">{t("int.c3.advance.note")}</p>
                   <p className="text-lg text-muted-foreground mb-2">{t("int.c3.advance.proof")}</p>
-                  <a href={WPP_LINK} target="_blank" rel="noopener noreferrer" className="text-gold text-lg font-bold underline">
+                  <a href={WPP_SPECIALIST} target="_blank" rel="noopener noreferrer" className="text-gold text-lg font-bold underline">
                     {t("int.c3.advance.cta")}
                   </a>
                 </div>
